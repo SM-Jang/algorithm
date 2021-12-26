@@ -29,7 +29,7 @@ class Bucket:
         self.stat=stat
         
 class OpenHash:
-    """오픈 주소법으로 해시 클래스 구현"""
+    """오 주소법으로 해시 클래스 구현"""
     def __init__(self, capacity: int) -> None:
         "초기화"
         self.capacity = capacity       # 해시 테이블의 크기
@@ -100,9 +100,12 @@ class OpenHash:
     def dump(self) -> None:
         for i in range(self.capacity):
             p = self.table[i]
-            print(i, end='')
-            while p is not None:
-                print(f' -> {p.key}({p.value})', end='')
-                p = p.next
+            print(f'{i:2} ', end='')
+            if self.table[i].stat == Status.OCCUPIED:
+                print(f'{self.table[i].key} ({self.table[i].value})')
+            elif self.table[i].stat == Status.EMPTY:
+                print('--미등록--')
+            elif self.table[i].stat == Status.DELETED:
+                print('--삭제완료--')
                 
-            print()
+            
