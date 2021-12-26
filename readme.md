@@ -29,6 +29,7 @@ annotations 주석과 같음, 그냥 자료형을 명시해주는 표현
  deep copy: 참조값 뿐만 아니라 참조하는 객체 자체를 복사 (전체 복사)
  
 2_Search
+
 keyword: key, value, sorted_data, complelxity
 idea: 반복을 통해 값을 찾음
       반복문 자체가 적거나 반복문을 끝내는 조건문이 적을 수록 효과적
