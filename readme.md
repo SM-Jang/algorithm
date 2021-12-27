@@ -52,3 +52,13 @@ list형, array형으로 쉽게 구현 가능
 queue - FIFO(First In First Out)
 enqueue - rear, dequeue - front
 list형, array형으로 쉽게 구현 가능 - ring buffer 구조
+
+4_recursive
+자기 자신을 포함하여 다시자기 자신을 사용
+factorial이 좋은 예시
+직접 재귀: 자신과 똑같은 함수를 호출하는 방식 a() -> a() -> ...
+간접재귀: a() -> b() -> a() -> ...
+
+ - 하향식 분석(top-down analysis): 가장 위쪽에 위치한 상자의 함수 호출부터 시작하여 계단식으로 자세히 조사해 나가는 분석 방법
+ - 상향식 분석(bottom-up analysis): 반대
+ 
