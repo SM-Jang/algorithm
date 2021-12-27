@@ -39,10 +39,16 @@ idea: 반복을 통해 값을 찾음
     체인법: 같은 헤시값 데이터를 연결 리스트로 연결하는 방법
     오픈 주소법: 데이터를 위한 해시값이 충돌할 떄 재해시하는 방법
  
- 3_stack&queue
- 
- 데이터를 임시로 저장하는 자료구조
- 
- stack - LIFO(Last In Frist Out)
- push, pop, top, bottom
- 
+3_stack&queue
+
+데이터를 임시로 저장하는 자료구조
+
+stack - LIFO(Last In Frist Out)
+push, pop, top, bottom, capacity, ptr
+top - push and pop, bottom 
+is_empty(), is_full()
+list형, array형으로 쉽게 구현 가능
+
+queue - FIFO(First In First Out)
+enqueue - rear, dequeue - front
+list형, array형으로 쉽게 구현 가능 - ring buffer 구조
