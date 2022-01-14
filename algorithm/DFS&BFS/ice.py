@@ -14,11 +14,14 @@ def dfs(x,y):
     if x<=-1 or x>=n or y<=-1 or y>=m:
         return False 
     
-    # 상,하,좌,우 채크
+    
     if graph[x][y] == 0:
         # 해당 노드 방문 처리
         graph[x][y]=1
-        dfs(x-1,y)
+        # 상,하,좌,우 채크
+        # True and False를 return하지만 결국 그냥 
+        # graph[x][y] 채크 외에는 return으로 어떠한 자극도 없음
+        dfs(x-1,y) 
         dfs(x,y-1)
         dfs(x+1,y)
         dfs(x,y+1)
