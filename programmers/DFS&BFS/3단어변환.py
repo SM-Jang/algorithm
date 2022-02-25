@@ -21,6 +21,7 @@ def solution(begin, target, words):
     heapq.heappush(q, (depth, begin))
     
     while q:
+        # bfs
         depth, word = heapq.heappop(q)
         depth += 1
 
