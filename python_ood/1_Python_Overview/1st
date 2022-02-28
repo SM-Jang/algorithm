@@ -1,0 +1,63 @@
+- OOD
+ - HelloWorld is an object
+ - __init__, __del__ and performAverage are methods
+- Largely in two parts
+ - Definition part(class)
+ - Execution part(main)
+
+Naming and Styling
+- Naming: Use names clearly conveying the meaning
+ - Use camel casing
+  - Class name: noun for the concept to be represented by the class
+      - capitalize the first letter of each word
+      - e.g. class MyFirstClass
+  - Variable name: Noun for the contents to be stored
+      - Start with lower case
+        - e.g. numberOfStudents = 100
+      - Acceptable, but not recommended in Python
+        - e.g. intCount = 0
+  - Method name: Verb for the method action
+      - Start with lower case
+        - e.g. def performAverage(self, val1, val2):
+
+- Indentation
+ - 4 spaces per each level
+
+- Comments
+ - block: ''' comments ''', """ comments """
+ - line: # comments
+
+- Control
+ - if
+ - for/while
+
+- Function Statement
+ - def name(param):
+ - You can return multiple variables
+ - You don't have to specify return types
+ - One line function is called lambda function
+ - e.g. lambdaAdd = lambda numParam1, numParam2: numParam1 + numParam2
+
+- '=='
+ - checks the equivalence if referenced values
+- is
+ - checks the equivalence of two referenced objects' IDs
+
+- See how to separate the source code files
+ - Just put your code in another file
+ - filename.py
+- See how to use classes in other files
+ - import filename
+- Use from to specify the directory or folder path
+
+
+- Directory or folder
+ - Clusters modules
+  - Modules -> filename.py
+ - We call theses directories as package
+ - Hence, the previous information is exactly
+  - from package import module
+ - Package has
+  - __init__.py in the directory
+  - 특정 디렉토리가 파이썬 패키지이다!
+  - This is how to differentiate between the ordinary and the package directories

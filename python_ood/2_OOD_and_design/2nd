@@ -1,0 +1,101 @@
+Weekly Objectives
+- This week, we learn the OOP and the basic of software design
+- Objectives are
+ - Understanding object-oriented concepts
+  - class, instance, inheritance, encapsulation, polymorphism
+ - Understanding a formal representation of software design
+  - Memorizing a number of UML notations
+ - Understanding a number of software design patterns
+  - Factory, Adapter, Bridge, Composite, Observer
+  - Memorizing their semantics and structures
+
+OOD
+현실의 다양한 것을 추상화를 통해 소프트웨어 설계하는 작업
+real world concepts -> software design(abstract)
+- 개념 이름
+- 개념 특성
+- 개념 행동
+- 추상화: 관심 있는 무엇 인가를 간략화하는 작업
+
+What are Class and Instance?
+- Class vs Instance
+ - Class
+  - Result of design and implementation
+  - Conceptualization
+  - Corresponds to design abstractions
+ - Instance
+  - Result of execution
+  - Realization
+  - Corresponds to real world entities
+
+ - Encapsulation
+  - Object = Data + Behavior
+   - Data: field, member variable, attribute
+   - Behavior: method, member of function, operation
+  - Delegating the implementation responsibility!
+   - Bring me a sausage, and I don't care how you made it
+  - Utilizing the visibility
+   - private: seen only within the class
+   - protected: seen only within the class and its descendants
+   - public: seen everywhere
+  - Python does not support the visibility options!
+
+ - Inheritance
+  - Inheritance
+   - Given my attribute to my descendants
+    - my attributes include
+     - member variables
+     - methods
+   - My descendants may have new attributes of their own
+   - My descendants may mask the received attributes
+   - But, if not specified, sons follow their father
+  - Superclass
+   - My ancestors, specifically my father
+   - Generalized from th econceptual view
+  - Subclass
+   - My descendants, specifically my son
+   - Specialized from the conceptual view
+  - How about having a mother?
+   - Yes, it is possible in Python
+
+ - self and super
+  - self: reference variable pointing the instance itself
+  - super: reference variable pointing the base class instance
+   - super is used to call the base class method
+ - Polymorphism
+  - poly: many
+  - morph: shape
+  - different behaviors with similar signature
+   - signature = method name + paramter list
+  - Method overriding
+   - base class has a method A(num),
+     its derived  class has a method A(num)
+  - Method Overloading
+   - A class ha a method A(num), A(num, name), and A(num, name, home)
+
+  - Abstract Class
+  사람들이 여러명 작업에 참여할 때, 하나의 틀로 작용
+   - Abstract class or Abstract Base Class in Python
+    - A class with an abstract method
+    - what is the abstract method?
+     - Method with signature but with no implementation
+     - Why use it then?
+     - I want to have a window here, but I don't know
+       how it will look like, but you should have a window here?
+     - Abstract class is not a complete implementation,
+       it is more like a half-made produce
+     - Therefore, you don't make an instance out of it
+   - The concrete class with full implementations and
+     inheriting the abstract class will be a basic for instances
+
+Overriding Method in object
+- All of Python classes are the descendants of object
+ - If you don't specify the base class of your class,
+   then your class is the direct derived class of object
+ - object has many hidden methods
+  - __init__: constructor
+  - __del__: destructor
+  - __eq__: equal
+  - __cmp__: comparison
+  - __add__
+ - You override them to make the methods behave as you please
