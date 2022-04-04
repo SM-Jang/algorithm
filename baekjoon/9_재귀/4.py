@@ -1,15 +1,18 @@
-# a는 현재 n개의 원판이 쌓여있는 곳, 
-# b는 n-1개의 원판을 옮겨 놓을 곳, 
-# c는 a에서 남은 원판을 놓을 곳이 된다.
+
+answer=[]
 def hanoi(n, a, b, c):
     if n==1:
-        move.append([a,c])
+        answer.append([a,c])
     else:
+        # n-1 in a -> b
         hanoi(n-1, a, c, b)
-        move.append([a, c])
+        # n-th in a -> c
+        answer.append([a, c])
+        # n-1 in b -> 
         hanoi(n-1, b, a, c)
         
-move = [] # 이동 경로
-hanoi(int(input()), 1, 2, 3)
-print(len(move))
-print('\n'.join([' '.join(str(i) for i in row) for row in move]))
+n = int(input())
+hanoi(n, 1,2,3)
+print(len(answer))
+for ans in answer:
+    print(ans[0], ans[1])
