@@ -1,6 +1,6 @@
 import sys
 # 1. 입력
-n = int(sys.stdin.readline().strip())
+n = int(sys.stdin.readline())
 
 # 2. 각 자리는 0~9이니까 counter이용
 counter = [0]*10

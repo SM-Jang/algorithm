@@ -1,6 +1,6 @@
 import sys
 # 1. 입력
-n = int(sys.stdin.readline().strip())
+n = int(sys.stdin.readline())
 
 
 # 2. counter(dict로 구현)
