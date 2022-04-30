@@ -1,31 +1,22 @@
-import sys
-from itertools import permutations
-n, m = map(int, sys.stdin.readline().split())
-
-memo = list(range(1, n+1))
-for case in list(permutations(memo,m)):
-    for c in case:
-        print(c, end=' ')
-    print()
-    
-#############
-
-
-visited = [False]*n
-out = []
-
-def dfs(depth, n, m):
-    if depth == m:
-        print(' '.join(map(str, out)))
+def make_seq(depth, m):
+    # 종료
+    if depth >= m:
+        print(*output)
         return
-    for i in range(len(visited)):
-        if not visited[i]:
-            visited[i]=True
-            
-            out.append(i+1)
-            dfs(depth+1, n, m)
-            
-            visited[i]=False
-            out.pop()
-            
-dfs(0,n,m)
+    
+    # depth에 값 넣기
+    for x in arr:
+        if x in output: continue
+        output[depth] = x
+        make_seq(depth+1, m)
+        output[depth] = 0
+        
+    
+    
+    
+# main
+n, m = map(int, input().split())
+arr = [i for i in range(1, n+1)]
+output = [0]*m
+
+make_seq(0, m)

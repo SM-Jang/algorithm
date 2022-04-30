@@ -1,32 +1,36 @@
-def check(row):
-    for i in range(row):
-        # 2-1. 현 queen의 위치 (열)이 이전에 놓은 것과 겹치는 지(행은 절대 안겹침)
-        # 2-2. 대각으로 겹치는지
-        if qPos[row] == qPos[i] or abs(qPos[row]-qPos[i]) == (row-i):
-            return False
-    return True
 
 
-def dfs(depth):
+def dfs(x, n):
+    # 종료
     global cnt
-    # 종료 조건
-    if depth >= n: 
-        cnt += 1
+    if x >= n:
+        cnt+=1
         return
     
-    for i in range(n):
-        # 1. 위치에 퀸 놓기
-        qPos[depth] = i
-        
-        # 2. 가능 위치 확인
-        if check(depth):
-            dfs(depth+1)
+    # x: depth
+    # y: i
+    for y in range(n):
+        row[x] = y
+        if not isused1[y] and not isused2[x+y] and not isused3[x-y+n-1]:
+            isused1[y]=True
+            isused2[x+y]=True
+            isused3[x-y+n-1]=True
+            
+            dfs(x+1, n)
+            
+            isused1[y]=False
+            isused2[x+y]=False
+            isused3[x-y+n-1]=False
 
 
 # main
-n=int(input())
+import sys
+n=int(sys.stdin.readline())
 cnt = 0
-qPos = [-1] * n # (index, value) = (행, 열)
-dfs(0)
-    
+isused1 = [False]*20 # 세로
+isused2 = [False]*40 # 대각1
+isused3 = [False]*40 # 대각2
+
+row = [-1]*n # queen
+dfs(0, n)
 print(cnt)
